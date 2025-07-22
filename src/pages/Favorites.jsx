@@ -1,22 +1,42 @@
 import { useEffect, useState } from 'react';
-import { getIdeas } from '../api';
 import IdeaCard from '../components/IdeaCard';
 
 export default function Favorites() {
-  const [ideas, setIdeas] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    getIdeas().then(data => {
-      setIdeas(data.filter(idea => idea.isFavorite));
-    });
+    fetch('http://localhost:3000/ideas?isFavorite=true')
+      .then((res) => res.json())
+      .then(setFavorites);
   }, []);
+
+  const handleDelete = (deletedId) => {
+    setFavorites((prev) => prev.filter((idea) => idea.id !== deletedId));
+  };
+
+  const handleToggleFavorite = (updatedIdea) => {
+  if (!updatedIdea.isFavorite) {
+    setFavorites((prev) => prev.filter((idea) => idea.id !== updatedIdea.id));
+  }
+};
+
 
   return (
     <div>
       <h2>Favorite Ideas</h2>
-      {ideas.map((idea) => (
-        <IdeaCard key={idea.id} idea={idea} />
-      ))}
+      {favorites.length === 0 ? (
+        <p>No favorite ideas yet.</p>
+      ) : (
+        favorites.map((idea) => (
+          <IdeaCard
+  key={idea.id}
+  idea={idea}
+  onDelete={handleDelete}
+  onToggleFavorite={handleToggleFavorite}
+/>
+
+        ))
+      )}
     </div>
   );
 }

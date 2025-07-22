@@ -1,10 +1,16 @@
 
 const API = "http://localhost:3000"
 
-export async function getIdeas() {
-  const res = await fetch(`${API}/ideas`);
-  return await res.json();
+// src/api.js
+export function getIdeas() {
+  return fetch('http://localhost:3000/ideas')
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to fetch ideas');
+      return res.json();
+    })
+    .then(data => data.sort((a, b) => b.id - a.id)); // Sort newest first
 }
+
 
 export async function postIdea(newIdea) {
   const res = await fetch(`${API}/ideas`, {
