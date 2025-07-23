@@ -23,9 +23,9 @@ export default function Favorites() {
 
   return (
     <div>
-      <h2>Favorite Ideas</h2>
+      <h2 className="centered-heading">Favorite Ideas</h2>
       {favorites.length === 0 ? (
-        <p>No favorite ideas yet.</p>
+        <p className="centered-heading">No favorite ideas yet.</p>
       ) : (
         favorites.map((idea) => (
           <IdeaCard

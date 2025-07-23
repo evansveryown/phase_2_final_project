@@ -47,8 +47,8 @@ export default function Home() {
 
   return (
     <div>
-      <h2>All Project Ideas</h2>
-      <AddIdeaForm onAdd={handleAddIdea} />
+      <h2 className="centered-heading">All Project Ideas</h2>
+      
       {ideas.length === 0 ? (
         <p>No project ideas yet.</p>
       ) : (

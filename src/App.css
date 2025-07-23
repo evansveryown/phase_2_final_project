@@ -10,6 +10,12 @@
   --shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
 }
 
+.centered-heading {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
 .dark {
   --bg-color: #1e1e1e;
   --text-color: #f5f5f5;
@@ -19,6 +25,13 @@
   --card-bg: #23272f;
   --card-border: #34495e;
   --shadow: 0 8px 32px rgba(20, 20, 40, 0.28);
+}
+
+/* Ensure consistent layout for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -115,7 +128,8 @@ body {
 }
 
 .idea-form input,
-.idea-form textarea {
+.idea-form textarea,
+.idea-form select {
   width: 100%;
   padding: 12px 14px;
   margin-bottom: 16px;
@@ -127,17 +141,19 @@ body {
   color: var(--text-color);
 }
 
-.dark .idea-form input,
-.dark .idea-form textarea {
-  background-color: #23272f;
-  color: var(--text-color);
-}
-
 .idea-form input:focus,
-.idea-form textarea:focus {
+.idea-form textarea:focus,
+.idea-form select:focus {
   border-color: var(--primary);
   outline: none;
   box-shadow: 0 0 4px var(--primary-light);
+}
+
+.dark .idea-form input,
+.dark .idea-form textarea,
+.dark .idea-form select {
+  background-color: #23272f;
+  color: var(--text-color);
 }
 
 .idea-form .form-actions {
@@ -189,7 +205,7 @@ body {
   border: 1px solid var(--primary-dark);
 }
 
-/* Optional: Add a smooth transition for the whole page when toggling dark mode */
+/* Smooth transitions */
 body, .idea-card, .idea-form, .navbar {
   transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
 }
@@ -247,12 +263,12 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   font-size: 1.6rem;
   cursor: pointer;
-  color: #bbb; /* grey when inactive */
+  color: #bbb;
   transition: color 0.2s;
   margin-left: 0.5rem;
   padding: 0;
 }
 
 .favorite-btn.active {
-  color: #27ae60; /* green when active */
+  color: #27ae60;
 }

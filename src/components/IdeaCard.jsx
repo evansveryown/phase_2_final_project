@@ -51,10 +51,13 @@ export default function IdeaCard({ idea, onDelete = () => {}, onToggleFavorite =
       <p>{idea.description}</p>
 
       <div className="tags">
-        {idea.tags.map((tag, index) => (
-          <span key={index} className="tag">{tag}</span>
-        ))}
-      </div>
+  {idea.tags.map((tag, index) => (
+    <span key={index} className="tag">
+      {tag}{index < idea.tags.length - 1 ? ', ' : ''}
+    </span>
+  ))}
+</div>
+
 
       <p className="category">
         <strong>Category:</strong> {idea.category}

@@ -1,4 +1,3 @@
-// AddIdeaForm.jsx
 import React, { useState } from "react";
 import "../App.css";
 
@@ -8,15 +7,32 @@ function AddIdeaForm({ onAddIdea }) {
   const [tags, setTags] = useState("");
   const [category, setCategory] = useState("");
 
+  const categories = [
+    "Dating",
+    "Finance",
+    "Food",
+    "Gaming",
+    "Health",
+    "Music",
+    "News",
+    "Productivity",
+    "Shopping",
+    "Social",
+    "Sports",
+    "Vehicles"
+  ];
+
   function handleSubmit(e) {
     e.preventDefault();
     if (!title.trim() || !description.trim()) return;
+
     onAddIdea({
       title,
       description,
       tags: tags.split(",").map(tag => tag.trim()),
       category
     });
+
     setTitle("");
     setDescription("");
     setTags("");
@@ -25,17 +41,20 @@ function AddIdeaForm({ onAddIdea }) {
 
   return (
     <form onSubmit={handleSubmit} className="idea-form">
-      <h2>Add New Idea</h2>
+      <h2 className="centered-heading">Add New Idea</h2>
+
       <input
         type="text"
         placeholder="Title"
         value={title}
         onChange={e => setTitle(e.target.value)}
+        required
       />
       <textarea
         placeholder="Description"
         value={description}
         onChange={e => setDescription(e.target.value)}
+        required
       ></textarea>
       <input
         type="text"
@@ -43,12 +62,18 @@ function AddIdeaForm({ onAddIdea }) {
         value={tags}
         onChange={e => setTags(e.target.value)}
       />
-      <input
-        type="text"
-        placeholder="Category"
+      <select
         value={category}
         onChange={e => setCategory(e.target.value)}
-      />
+        required
+      >
+        <option value="">Select Category</option>
+        {categories.map(cat => (
+          <option key={cat} value={cat}>
+            {cat}
+          </option>
+        ))}
+      </select>
       <div className="form-actions">
         <button type="submit">Add Idea</button>
       </div>

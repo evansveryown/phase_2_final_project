@@ -1,84 +1,124 @@
 {
   "ideas": [
     {
-      "id": 1,
+      "id": "1",
       "title": "AI Career Coach",
       "description": "A web app that uses AI to suggest career paths based on skills.",
-      "tags": ["AI", "career", "solo"],
+      "tags": [
+        "AI",
+        "career",
+        "solo"
+      ],
       "category": "Web",
       "isFavorite": false
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "GreenThumb Planner",
       "description": "An intuitive mobile application designed for urban gardeners to track plant growth, schedule watering reminders, and receive seasonal tips based on location and weather forecasts.",
-      "tags": ["gardening", "environment", "mobile"],
+      "tags": [
+        "gardening",
+        "environment",
+        "mobile"
+      ],
       "category": "Mobile",
       "isFavorite": false
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Remote Team Vibe",
       "description": "A SaaS dashboard tool that monitors team morale through anonymous feedback, mood check-ins, and AI-generated wellness suggestions for distributed teams.",
-      "tags": ["teamwork", "remote", "analytics"],
+      "tags": [
+        "teamwork",
+        "remote",
+        "analytics"
+      ],
       "category": "SaaS",
       "isFavorite": false
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "EduSketch",
       "description": "A creative learning tool for kids that transforms educational content into interactive sketching challenges and storyboards, encouraging active participation and visual learning.",
-      "tags": ["education", "kids", "creativity"],
+      "tags": [
+        "education",
+        "kids",
+        "creativity"
+      ],
       "category": "Web",
       "isFavorite": false
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "MindMeal Tracker",
       "description": "A web-based journal and nutrition assistant that connects your eating habits with your emotional and mental well-being, offering AI-powered suggestions to improve both diet and mood.",
-      "tags": ["mental-health", "food", "AI"],
+      "tags": [
+        "mental-health",
+        "food",
+        "AI"
+      ],
       "category": "Health",
       "isFavorite": false
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "SkillSwap Network",
       "description": "A platform that connects individuals looking to trade skills (like guitar for coding) through verified, location-based matching and in-app session scheduling.",
-      "tags": ["learning", "networking", "skills"],
+      "tags": [
+        "learning",
+        "networking",
+        "skills"
+      ],
       "category": "Web",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "EcoSnap Scanner",
       "description": "A mobile app that lets users scan product barcodes to instantly see environmental impact data, ethical ratings, and sustainable alternatives.",
-      "tags": ["sustainability", "mobile", "scanner"],
+      "tags": [
+        "sustainability",
+        "mobile",
+        "scanner"
+      ],
       "category": "Mobile",
       "isFavorite": false
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "MuseMap",
       "description": "An interactive digital map where artists can upload their work based on location, allowing users to explore street art, poetry, or music recordings by city or neighborhood.",
-      "tags": ["art", "location", "explore"],
+      "tags": [
+        "art",
+        "location",
+        "explore"
+      ],
       "category": "Web",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "PocketDoc AI",
       "description": "A smart health assistant app that uses symptom checkers, medical history, and daily tracking to offer preliminary advice and connect users with nearby health professionals.",
-      "tags": ["AI", "health", "assistant"],
+      "tags": [
+        "AI",
+        "health",
+        "assistant"
+      ],
       "category": "Mobile",
       "isFavorite": false
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "FocusForge",
       "description": "A browser extension that uses smart blocking, goal reminders, and motivational quotes to keep users focused during work or study sessions, with analytics to track improvements over time.",
-      "tags": ["productivity", "extension", "focus"],
+      "tags": [
+        "productivity",
+        "extension",
+        "focus"
+      ],
       "category": "Extension",
-      "isFavorite": false
+      "isFavorite": true
     }
   ]
 }

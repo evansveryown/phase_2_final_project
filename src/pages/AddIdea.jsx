@@ -1,20 +1,29 @@
-import { useNavigate } from 'react-router-dom';
-import AddIdeaForm from '../components/AddIdeaForm';
-import { postIdea } from '../api';
+// AddIdea.jsx
+import { useNavigate } from "react-router-dom";
+import AddIdeaForm from "../components/AddIdeaForm";
 
 export default function AddIdea() {
   const navigate = useNavigate();
 
-  function handleAdd(newIdea) {
-    postIdea(newIdea).then(() => {
-      navigate('/');
-    });
-  }
+  const handleAddIdea = (newIdea) => {
+    fetch("http://localhost:3000/ideas", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...newIdea, isFavorite: false })
+    })
+      .then((res) => res.json())
+      .then(() => {
+        navigate("/"); // 👈 redirect to Home after adding
+      })
+      .catch((err) => {
+        console.error("Failed to add idea:", err);
+        alert("Failed to add idea");
+      });
+  };
 
   return (
     <div>
-      <h2>Add New Idea</h2>
-      <AddIdeaForm onAdd={handleAdd} />
+      <AddIdeaForm onAddIdea={handleAddIdea} />
     </div>
   );
 }
