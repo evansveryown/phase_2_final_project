@@ -42,7 +42,8 @@ body {
 }
 
 .navbar {
-  padding: 1rem 2rem;
+  min-height: 70px;
+  padding: 1.5rem 2.5rem;
   background: linear-gradient(90deg, var(--primary-dark) 60%, var(--primary) 100%);
   color: #fff;
   display: flex;
