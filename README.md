@@ -2,6 +2,10 @@
 Project idea volt
 ## DESCRIPTION
 This is a webpage for developers whereby they can be able to add project ideas that they have and can be able to categorize an idea as their favorite .
+## Authors
+- Cassy omondi
+- Felix waweru
+- Kenneth Kipkosgei
 ## FEATURES
 - Add a project idea
 - View the ideas 
@@ -21,6 +25,8 @@ This is a webpage for developers whereby they can be able to add project ideas t
 - Add a project 
 - view all the existing ideas 
 - View all the favorites and one can also add a fovrite
+## screenshot
+![screenshot](screenshot.png)
 ## Links
 [Frontend]()
 [Backend](https://phase2-project-7zdc.onrender.com)
