@@ -72,16 +72,34 @@ export default function EditIdeaForm({ ideaId, onUpdate, onCancel }) {
         onChange={e => setTags(e.target.value)}
         placeholder="Tags (comma separated)"
       />
-      <input
-        type="text"
-        value={category}
-        onChange={e => setCategory(e.target.value)}
-        placeholder="Category"
-        required
-      />
+      <select
+  value={category}
+  onChange={e => setCategory(e.target.value)}
+  required
+>
+  <option value="">Select Category</option>
+  {[
+    "Dating",
+    "Finance",
+    "Food",
+    "Gaming",
+    "Health",
+    "Music",
+    "News",
+    "Productivity",
+    "Shopping",
+    "Social",
+    "Sports",
+    "Vehicles"
+  ].map(cat => (
+    <option key={cat} value={cat}>
+      {cat}
+    </option>
+  ))}
+</select>
+
       <div className="form-actions">
         <button type="submit">Update</button>
-        <button type="button" onClick={onCancel}>Cancel</button>
       </div>
     </form>
   );

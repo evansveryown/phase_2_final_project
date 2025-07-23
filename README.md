@@ -1,5 +1,5 @@
 # TITLE
-Project idea volt
+Project Idea Vault
 ## DESCRIPTION
 This is a webpage for developers whereby they can be able to add project ideas that they have and can be able to categorize an idea as their favorite .
 ## Authors
@@ -28,7 +28,7 @@ This is a webpage for developers whereby they can be able to add project ideas t
 ## screenshot
 ![screenshot](screenshot.png)
 ## Links
-[Frontend]()
+[Frontend](https://phase-2-final-project-delta.vercel.app/)
 [Backend](https://phase2-project-7zdc.onrender.com)
 ## Technologies 
 - React 
