@@ -21,6 +21,9 @@ This is a webpage for developers whereby they can be able to add project ideas t
 - Add a project 
 - view all the existing ideas 
 - View all the favorites and one can also add a fovrite
+## Links
+[Frontend]()
+[Backend](https://phase2-project-7zdc.onrender.com)
 ## Technologies 
 - React 
 - Css 
