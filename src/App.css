@@ -197,3 +197,47 @@ body, .idea-card, .idea-form, .navbar {
 h1, h2, h3, h4, h5, h6 {
   font-size: 28px !important;
 }
+
+.card-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.edit-btn {
+  background: linear-gradient(90deg, var(--primary) 60%, var(--primary-light) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+.edit-btn:hover,
+.edit-btn:focus {
+  background: linear-gradient(90deg, var(--primary-dark) 60%, var(--primary) 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.delete-btn {
+  background: linear-gradient(90deg, #e74c3c 60%, #ff7675 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+  background: linear-gradient(90deg, #c0392b 60%, #e17055 100%);
+  transform: translateY(-2px) scale(1.03);
+}
