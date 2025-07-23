@@ -5,7 +5,7 @@ export default function Favorites() {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/ideas?isFavorite=true')
+    fetch('https://phase2-project-7zdc.onrender.com/ideas?isFavorite=true')
       .then((res) => res.json())
       .then(setFavorites);
   }, []);

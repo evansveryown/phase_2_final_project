@@ -12,7 +12,7 @@ export default function EditIdeaForm({ ideaId, onUpdate, onCancel }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/ideas/${ideaId}`)
+    fetch(`https://phase2-project-7zdc.onrender.com/ideas/${ideaId}`)
       .then(res => {
         if (!res.ok) throw new Error("Idea not found");
         return res.json();
@@ -39,7 +39,7 @@ export default function EditIdeaForm({ ideaId, onUpdate, onCancel }) {
       category
     };
 
-    fetch(`http://localhost:3000/ideas/${ideaId}`, {
+    fetch(`https://phase2-project-7zdc.onrender.com/ideas/${ideaId}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedIdea)

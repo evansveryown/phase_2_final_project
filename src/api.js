@@ -1,9 +1,9 @@
 
-const API = "http://localhost:3000"
+const API = "https://phase2-project-7zdc.onrender.com"
 
 // src/api.js
 export function getIdeas() {
-  return fetch('http://localhost:3000/ideas')
+  return fetch('https://phase2-project-7zdc.onrender.com/ideas')
     .then(res => {
       if (!res.ok) throw new Error('Failed to fetch ideas');
       return res.json();

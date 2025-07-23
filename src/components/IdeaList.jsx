@@ -5,7 +5,7 @@ import "../App.css";
 
 export default function IdeaCard({ idea, onDelete = () => {}, onToggleFavorite = () => {} }) {
   const toggleFavorite = () => {
-    fetch(`http://localhost:3000/ideas/${idea.id}`, {
+    fetch(`https://phase2-project-7zdc.onrender.com/ideas/${idea.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ isFavorite: !idea.isFavorite }),
@@ -22,7 +22,7 @@ export default function IdeaCard({ idea, onDelete = () => {}, onToggleFavorite =
 
   const handleDelete = () => {
     if (window.confirm('Are you sure you want to delete this idea?')) {
-      fetch(`http://localhost:3000/ideas/${idea.id}`, {
+      fetch(`https://phase2-project-7zdc.onrender.com/ideas/${idea.id}`, {
         method: 'DELETE',
       })
         .then((res) => {

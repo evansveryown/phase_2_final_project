@@ -12,7 +12,7 @@ export default function Home() {
 
 
   const handleAddIdea = (newIdea) => {
-    fetch('http://localhost:3000/ideas', {
+    fetch('https://phase2-project-7zdc.onrender.com/ideas', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
