@@ -1,14 +1,14 @@
+// EditIdeaForm.jsx
+import React, { useState, useEffect } from "react";
+import "../App.css";
 
-import { useState, useEffect } from 'react';
-
-export default function EditIdeaForm({ ideaId, onUpdate }) {
-
+export default function EditIdeaForm({ ideaId, onUpdate, onCancel }) {
   console.log("EditIdeaForm loaded with ideaId:", ideaId);
 
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [tags, setTags] = useState('');
-  const [category, setCategory] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [tags, setTags] = useState("");
+  const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function EditIdeaForm({ ideaId, onUpdate }) {
       .then(data => {
         setTitle(data.title);
         setDescription(data.description);
-        setTags(data.tags.join(', '));
+        setTags(data.tags.join(", "));
         setCategory(data.category);
         setLoading(false);
       })
@@ -30,13 +30,12 @@ export default function EditIdeaForm({ ideaId, onUpdate }) {
       });
   }, [ideaId]);
 
-
   function handleSubmit(e) {
     e.preventDefault();
     const updatedIdea = {
       title,
       description,
-      tags: tags.split(',').map(tag => tag.trim()),
+      tags: tags.split(",").map(tag => tag.trim()),
       category
     };
 
@@ -46,44 +45,44 @@ export default function EditIdeaForm({ ideaId, onUpdate }) {
       body: JSON.stringify(updatedIdea)
     })
       .then(res => res.json())
-      .then(onUpdate); // callback to handle navigation or state update
+      .then(onUpdate);
   }
 
-  if (loading) return <p>Loading idea...</p>; // ✅ loading state
+  if (loading) return <p>Loading idea...</p>;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="idea-form">
       <h2>Edit Idea</h2>
       <input
         type="text"
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={e => setTitle(e.target.value)}
         placeholder="Title"
         required
       />
       <textarea
         value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        onChange={e => setDescription(e.target.value)}
         placeholder="Description"
         required
       />
       <input
         type="text"
         value={tags}
-        onChange={(e) => setTags(e.target.value)}
+        onChange={e => setTags(e.target.value)}
         placeholder="Tags (comma separated)"
       />
-      <select
+      <input
+        type="text"
         value={category}
-        onChange={(e) => setCategory(e.target.value)}
+        onChange={e => setCategory(e.target.value)}
+        placeholder="Category"
         required
-      >
-        <option value="">Select Category</option>
-        <option value="Web">Web</option>
-        <option value="Mobile">Mobile</option>
-        <option value="AI">AI</option>
-      </select>
-      <button type="submit">Update Idea</button>
+      />
+      <div className="form-actions">
+        <button type="submit">Update</button>
+        <button type="button" onClick={onCancel}>Cancel</button>
+      </div>
     </form>
   );
 }

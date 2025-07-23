@@ -1,42 +1,258 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App.css */
+:root {
+  --bg-color: #f4f8fb;
+  --text-color: #222b45;
+  --primary: #2075ee;
+  --primary-light: #6c99f8;
+  --primary-dark: #155dc5;
+  --card-bg: #fff;
+  --card-border: #d7e3ff;
+  --shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+}
+
+.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f5f5f5;
+  --primary: #4f8cff;
+  --primary-light: #7faaff;
+  --primary-dark: #3466d6;
+  --card-bg: #23272f;
+  --card-border: #34495e;
+  --shadow: 0 8px 32px rgba(20, 20, 40, 0.28);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.idea-card {
+  border: 1px solid var(--card-border);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: var(--shadow);
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+.navbar {
+  min-height: 70px;
+  padding: 1.5rem 2.5rem;
+  background: linear-gradient(90deg, var(--primary-dark) 60%, var(--primary) 100%);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.navbar-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.navbar-right a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+
+.navbar-right a.active,
+.navbar-right a:hover {
+  color: var(--primary-light);
+  border-bottom: 2px solid var(--primary-light);
+}
+
+.navbar a, .navbar button {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.navbar a:hover, .navbar button:hover {
+  color: var(--primary-light);
+}
+
+.idea-form {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 32px 28px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  border: 1px solid var(--card-border);
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+.idea-form h2 {
+  margin-bottom: 22px;
+  color: var(--primary);
   text-align: center;
+  font-size: 2rem;
+  letter-spacing: 1px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.idea-form input,
+.idea-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  background-color: #f7faff;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+  font-size: 1rem;
+  color: var(--text-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.dark .idea-form input,
+.dark .idea-form textarea {
+  background-color: #23272f;
+  color: var(--text-color);
 }
 
-.card {
-  padding: 2em;
+.idea-form input:focus,
+.idea-form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 4px var(--primary-light);
 }
 
-.read-the-docs {
-  color: #888;
+.idea-form .form-actions {
+  text-align: right;
+}
+
+.idea-form button[type="submit"] {
+  background: linear-gradient(90deg, var(--primary) 60%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.idea-form button[type="submit"]:hover,
+.idea-form button[type="submit"]:focus {
+  background: linear-gradient(90deg, var(--primary-dark) 60%, var(--primary) 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--card-bg);
+  color: var(--primary);
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.3s, color 0.3s, border 0.3s;
+  z-index: 1000;
+}
+
+.dark .dark-toggle {
+  background: var(--card-bg);
+  color: var(--primary-light);
+  border: 1px solid var(--primary-dark);
+}
+
+/* Optional: Add a smooth transition for the whole page when toggling dark mode */
+body, .idea-card, .idea-form, .navbar {
+  transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 28px !important;
+}
+
+.card-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.edit-btn {
+  background: linear-gradient(90deg, var(--primary) 60%, var(--primary-light) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+.edit-btn:hover,
+.edit-btn:focus {
+  background: linear-gradient(90deg, var(--primary-dark) 60%, var(--primary) 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.delete-btn {
+  background: linear-gradient(90deg, #e74c3c 60%, #ff7675 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+  background: linear-gradient(90deg, #c0392b 60%, #e17055 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #bbb; /* grey when inactive */
+  transition: color 0.2s;
+  margin-left: 0.5rem;
+  padding: 0;
+}
+
+.favorite-btn.active {
+  color: #27ae60; /* green when active */
 }
